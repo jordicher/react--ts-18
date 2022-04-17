@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface IResPokemon {
   name: string;
@@ -28,7 +29,13 @@ function App() {
         setLoading(false);
       });
   }, []);
-  return <div>{response?.name}</div>;
+  return (
+    <div>
+      {response?.name}
+
+      <Link to="/transition">Transitions</Link>
+    </div>
+  );
 }
 
 export default App;
