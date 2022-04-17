@@ -8,16 +8,17 @@ function App() {
   const [error, setError] = useState(null);
   const [response, setResponse] = useState<IResPokemon | null>(null);
 
-  console.log('renders count'); //2
+  console.log('renders count'); //primer render
 
   useEffect(() => {
+    //segundo render
     setLoading(true);
     setError(null);
 
-    //fetch pokeapi
     fetch('https://pokeapi.co/api/v2/pokemon/1')
       .then(res => res.json())
       .then(res => {
+        //tercer render
         setResponse(res);
         setLoading(false);
       })
